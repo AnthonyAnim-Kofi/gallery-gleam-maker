@@ -14,10 +14,10 @@ import roleHumanitarian from "@/assets/role-humanitarian.jpg";
 import roleLeader from "@/assets/role-leader.jpg";
 import roleCreator from "@/assets/role-creator.jpg";
 import missionImage from "@/assets/mission-image.jpg";
+import worldMap from "@/assets/world-map.png";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import Newsletter from "@/components/Newsletter";
-import { Check, Star, Globe, MapPin } from "lucide-react";
 
 const lifeRoles = [
   { title: "Lawyer", image: roleLawyer },
@@ -230,26 +230,39 @@ const Index = () => {
       </section>
 
       {/* Global Reach Section */}
-      <section className="section-padding bg-muted">
+      <section className="section-padding bg-background">
         <div className="container mx-auto text-center">
           <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
             Leaving my mark all around the globe!
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto mb-12">
-            I've touched USA, Europe and Africa with my presence, I'm coming to your continent next.
+          <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
+            I've touched USA, Europe and Africa wit my presence, I'm coming to your continent next.
           </p>
 
-          {/* Map Visualization */}
-          <div className="relative max-w-4xl mx-auto">
-            <div className="grid grid-cols-3 gap-8 py-12">
-              {["USA", "Europe", "Africa"].map((location) => (
-                <div key={location} className="text-center">
-                  <div className="inline-flex items-center justify-center w-12 h-12 bg-primary text-primary-foreground rounded-full mb-3 animate-float">
-                    <Star size={20} />
-                  </div>
-                  <p className="font-heading text-lg font-semibold">{location}</p>
-                </div>
-              ))}
+          {/* Map with Markers */}
+          <div className="relative max-w-5xl mx-auto">
+            <img 
+              src={worldMap} 
+              alt="World Map" 
+              className="w-full h-auto"
+            />
+            
+            {/* USA Marker */}
+            <div className="absolute left-[18%] top-[42%] flex flex-col items-center">
+              <div className="w-3 h-3 md:w-4 md:h-4 bg-primary rounded-full border-2 border-primary shadow-lg"></div>
+              <span className="mt-1 text-primary font-heading text-sm md:text-lg font-medium">USA</span>
+            </div>
+            
+            {/* Africa Marker */}
+            <div className="absolute left-[42%] top-[58%] flex flex-col items-center">
+              <div className="w-3 h-3 md:w-4 md:h-4 bg-primary rounded-full border-2 border-primary shadow-lg"></div>
+              <span className="mt-1 text-primary font-heading text-sm md:text-lg font-medium">Africa</span>
+            </div>
+            
+            {/* Europe Marker */}
+            <div className="absolute left-[58%] top-[35%] flex flex-col items-center">
+              <div className="w-3 h-3 md:w-4 md:h-4 bg-primary rounded-full border-2 border-primary shadow-lg"></div>
+              <span className="mt-1 text-primary font-heading text-sm md:text-lg font-medium">Europe</span>
             </div>
           </div>
         </div>
