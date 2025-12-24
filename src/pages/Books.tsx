@@ -1,11 +1,14 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import Newsletter from "@/components/Newsletter";
 import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
 import bookTyranny from "@/assets/book-tyranny.png";
 import dionneMessage from "@/assets/dionne-message.jpg";
-import dionneHero from "@/assets/dionne-hero.jpg";
+import dionneAbout from "@/assets/dionne-about.jpg";
 
-const bookFeatures = [
+const tyrannyFeatures = [
   "Constantly questions your worth, despite being accomplished on paper.",
   "Feels like you are living on autopilot but doesn't know how to break free.",
   "Has dreams your buried because they felt \"too much\" or \"too late.\"",
@@ -16,44 +19,86 @@ const bookFeatures = [
   "Is tired of settling for survival when you were created for significance.",
 ];
 
+const conqueringFeatures = [
+  "You've overcome a lot, but still feel like you're not \"enough.\"",
+  "You constantly battle with imposter syndrome or fear of failure.",
+  "You're exhausted from performing for acceptance instead of living authentically.",
+  "You know you're called to lead, but self-doubt keeps paralyzing your progress.",
+  "You feel stuck between who you've been and who you're becoming.",
+  "You want to heal from the wounds of rejection, comparison, or betrayal.",
+  "You're tired of playing it safe and are ready to play by Heaven's rules.",
+  "You're ready to fight back - with strategy, not just strength.",
+];
+
+const testimonials = [
+  {
+    image: "/placeholder.svg",
+    quote: "The book follows the narrative of an immigrant's plight and struggles, using universal human language that anyone can benefit from. Tweneboah's piercing clarity and poetic insight expose the lie of ordinary lives and offer a bold roadmap to rebel against cultural conformity.",
+    name: "Mikey B"
+  },
+  {
+    image: "/placeholder.svg",
+    quote: "This book changed my perspective on what it means to live with purpose. Every chapter felt like a personal conversation with someone who truly understands the struggle of wanting more.",
+    name: "Sarah M"
+  },
+  {
+    image: "/placeholder.svg",
+    quote: "Dionne's words are both a mirror and a map. She shows you where you've been hiding and guides you toward where you're meant to be.",
+    name: "Jennifer K"
+  }
+];
+
 const Books = () => {
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+  const nextTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      {/* Hero Section - Dark Gray */}
-      <section className="pt-20 md:pt-24 bg-[hsl(0,0%,30%)]">
+      {/* Hero Section - Burgundy */}
+      <section className="pt-20 md:pt-24 bg-primary">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-wide">
-                CONQUERING
+              <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl text-primary-foreground">
+                <span className="italic font-normal">The Tyranny of</span>
+                <br />
+                <span className="italic font-normal">the </span>
+                <span className="font-bold not-italic">Ordinary</span>
               </h1>
+              
               <div className="space-y-1">
-                <p className="text-white/90 text-lg md:text-xl italic">
-                  Overcome what's holding you back.
+                <p className="text-primary-foreground/90 text-lg md:text-xl font-medium">
+                  Break free from average. Step into your extraordinary.
                 </p>
-                <p className="text-white/90 text-lg md:text-xl italic">
-                  Become who you were born to be.
-                </p>
-                <div className="w-48 h-1 bg-gradient-to-r from-white/60 to-transparent mt-2" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 10\'%3E%3Cpath d=\'M0,5 Q50,0 100,5 T200,5\' stroke=\'white\' stroke-width=\'2\' fill=\'none\' opacity=\'0.6\'/%3E%3C/svg%3E")' }} />
+                <svg className="w-48 h-4 mt-2" viewBox="0 0 200 10">
+                  <path d="M0,5 Q50,0 100,5 T200,5" stroke="white" strokeWidth="2" fill="none" opacity="0.6"/>
+                </svg>
               </div>
               
-              <p className="text-white/80 italic text-sm md:text-base leading-relaxed">
-                "This is not just about winning battles—it's about becoming the kind of person who never bows to fear again."
+              <p className="text-primary-foreground/80 italic text-sm md:text-base leading-relaxed">
+                You weren't born to blend in. You were born to shift atmospheres, rewrite generational stories, and live with intention, not inertia.
               </p>
               
-              <p className="text-white/70 text-sm md:text-base leading-relaxed">
-                Conquering is for the one who's tired of shrinking under pressure, apologizing for her strength, or second-guessing the fire in her soul. This is your permission slip to rise. Whether you're battling fear, doubt, people-pleasing, or perfectionism, this book gives you the tools to break chains and walk boldly into the life that's been calling you.
+              <p className="text-primary-foreground/70 text-sm md:text-base leading-relaxed">
+                If you've ever felt the ache of living beneath your potential, The Tyranny of the Ordinary is your wake-up call. This empowering book is for every one who's tired of dimming her light to fit in. Through vivid storytelling, faith-fueled wisdom, and powerful mindset shifts, bestselling author Dionne Tweneboah invites you to confront the comfort zones that are costing you your calling.
               </p>
               
-              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-md">
+              <Button className="bg-[hsl(45,100%,50%)] hover:bg-[hsl(45,100%,45%)] text-black font-semibold px-8 py-3 rounded-full">
                 Buy The Book
               </Button>
             </div>
 
             <div className="flex justify-center lg:justify-end">
-              <div className="bg-[hsl(0,0%,85%)] p-8 rounded-lg shadow-2xl">
+              <div className="bg-[hsl(0,0%,90%)] p-8 rounded-lg shadow-2xl">
                 <img
                   src={bookTyranny}
                   alt="The Tyranny of the Ordinary"
@@ -127,7 +172,7 @@ const Books = () => {
                 </p>
               </div>
               
-              <Button variant="outline" className="border-primary text-primary-foreground bg-primary hover:bg-primary/90 px-8 py-3 uppercase tracking-wide">
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground border border-primary-foreground/20 px-8 py-3 uppercase tracking-wide rounded-full">
                 Buy The Tyranny of The Ordinary
               </Button>
             </div>
@@ -135,7 +180,7 @@ const Books = () => {
         </div>
       </section>
 
-      {/* Who This Book Is For */}
+      {/* Who This Book Is For - Tyranny */}
       <section className="py-16 md:py-24 bg-[hsl(0,0%,95%)]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
@@ -153,7 +198,7 @@ const Books = () => {
             </h3>
             
             <div className="grid md:grid-cols-2 gap-x-12 gap-y-6">
-              {bookFeatures.map((feature, index) => (
+              {tyrannyFeatures.map((feature, index) => (
                 <div key={index} className="flex items-start gap-3">
                   <span className="font-bold text-foreground">{index + 1}.</span>
                   <p className="text-muted-foreground">{feature}</p>
@@ -168,47 +213,178 @@ const Books = () => {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="flex items-center justify-center gap-8 mb-8">
+              <button 
+                onClick={prevTestimonial}
+                className="p-2 hover:bg-muted rounded-full transition-colors"
+                aria-label="Previous testimonial"
+              >
+                <ChevronLeft className="w-6 h-6 text-muted-foreground" />
+              </button>
+              
+              <div className="w-32 h-32 rounded-full overflow-hidden bg-muted">
+                <img 
+                  src={testimonials[currentTestimonial].image} 
+                  alt={testimonials[currentTestimonial].name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
+              <button 
+                onClick={nextTestimonial}
+                className="p-2 hover:bg-muted rounded-full transition-colors"
+                aria-label="Next testimonial"
+              >
+                <ChevronRight className="w-6 h-6 text-muted-foreground" />
+              </button>
+            </div>
+            
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6 max-w-3xl mx-auto">
+              {testimonials[currentTestimonial].quote}
+            </p>
+            
+            <p className="font-heading text-lg italic text-foreground">
+              ~ {testimonials[currentTestimonial].name} ~
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* About the Author */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
             <div className="space-y-6">
               <h2 className="font-heading text-3xl md:text-4xl font-bold">
                 About the Author
               </h2>
               <p className="text-muted-foreground leading-relaxed">
-                Dionne Tweneboah is a bestselling author, transformational speaker, and purpose mentor. Rooted in faith and fueled by a deep passion for women's empowerment, she helps women break free from mediocrity and step into their divine purpose.
+                Dionne Tweneboah is a bestselling author, fashion and lifestyle content creator, and purpose-alignment mentor. Known for her empowering voice and effortless elegance, Dionne helps women bridge the gap between their God-given calling and daily confidence.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Through her work, she equips and inspires women all over the globe to conquer their inner chaos and build lives aligned with their calling.
+                Through her books, online presence, and brand collaborations, she has built a global community of ambitious, faith-driven people who are reclaiming their identity, purpose, and power.
               </p>
+              <p className="italic text-muted-foreground leading-relaxed font-heading">
+                When she's not writing or curating intentional style content, Dionne is speaking life into people across platforms, reminding them that ordinary was never their destiny.
+              </p>
+              
+              <h3 className="font-heading text-2xl md:text-3xl font-bold pt-4">
+                Are You Ready to<br />Conquer the Ordinary?
+              </h3>
+              <p className="italic text-muted-foreground">
+                This book isn't just something to read—it's something to live.<br />
+                Let this be the year you stop playing small and start rising with power.
+              </p>
+              
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-full">
+                Order Your Copy Now
+              </Button>
             </div>
 
             <div className="flex justify-center lg:justify-end">
               <img
-                src={dionneHero}
+                src={dionneAbout}
                 alt="Dionne Tweneboah"
-                className="w-64 md:w-80 rounded-lg shadow-xl"
+                className="w-full max-w-md object-cover rounded-lg"
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-primary text-primary-foreground text-center">
-        <div className="container mx-auto px-4 max-w-2xl">
-          <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6">
-            Are You Ready to<br />Conquer the Ordinary?
-          </h2>
-          <p className="text-lg opacity-90 mb-8">
-            This book isn't just pages—it's a compass and a mirror, a challenge and a gift, a love letter to your highest self.
-          </p>
-          <Button variant="outline" size="lg" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary px-8">
-            Get Your Copy Now
-          </Button>
+      {/* Conquering Section - Dark Gray */}
+      <section className="bg-[hsl(0,0%,30%)] py-16 md:py-24">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <div className="space-y-6">
+              <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-wide">
+                CONQUERING
+              </h2>
+              <div className="space-y-1">
+                <p className="text-white/90 text-lg md:text-xl italic">
+                  Overcome what's holding you back.
+                </p>
+                <p className="text-white/90 text-lg md:text-xl italic">
+                  Become who you were born to be.
+                </p>
+                <svg className="w-48 h-4 mt-2" viewBox="0 0 200 10">
+                  <path d="M0,5 Q50,0 100,5 T200,5" stroke="white" strokeWidth="2" fill="none" opacity="0.6"/>
+                </svg>
+              </div>
+              
+              <p className="text-white/80 italic text-sm md:text-base leading-relaxed">
+                "This is not just about winning battles—it's about becoming the kind of person who never bows to fear again."
+              </p>
+              
+              <p className="text-white/70 text-sm md:text-base leading-relaxed">
+                Conquering is for the one who's tired of shrinking under pressure, apologizing for her strength, or second-guessing the fire in her soul. This is your permission slip to rise. Whether you're battling fear, doubt, people-pleasing, or perfectionism, this book gives you the tools to break chains and walk boldly into the life that's been calling you.
+              </p>
+              
+              <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-full">
+                Buy The Book
+              </Button>
+            </div>
+
+            <div className="flex justify-center lg:justify-end">
+              <div className="bg-[hsl(0,0%,85%)] p-8 rounded-lg shadow-2xl">
+                <img
+                  src={bookTyranny}
+                  alt="The Tyranny of the Ordinary"
+                  className="w-64 md:w-80 rounded shadow-xl transform rotate-3 hover:rotate-0 transition-transform duration-300"
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
+
+      {/* Who This Book Is For - Conquering */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-3xl md:text-4xl font-bold">
+              Who This Book Is For
+            </h2>
+          </div>
+
+          <div className="max-w-5xl mx-auto bg-[hsl(0,0%,95%)] rounded-lg p-8 md:p-12">
+            <h3 className="font-heading text-xl md:text-2xl font-semibold mb-8 text-center text-primary">
+              You'll feel seen in this book if:
+            </h3>
+            
+            <div className="grid md:grid-cols-2 gap-x-12 gap-y-6">
+              {conqueringFeatures.map((feature, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <span className="font-bold text-foreground">{index + 1}.</span>
+                  <p className="text-muted-foreground">{feature}</p>
+                </div>
+              ))}
+            </div>
+
+            <p className="text-center mt-12 text-primary font-semibold text-lg">
+              If even one of these resonates - this book is for you.
+            </p>
+          </div>
+          
+          <div className="text-center mt-12 space-y-6">
+            <p className="text-lg md:text-xl text-foreground max-w-3xl mx-auto">
+              You don't have to fight another battle alone - or unequipped.<br />
+              Conquering is your guide back to your boldest, most free, and most faith-filled self.
+            </p>
+            
+            <Button className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 rounded-full">
+              Order Your Copy Now
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Section */}
+      <Newsletter />
 
       <Footer />
     </div>
