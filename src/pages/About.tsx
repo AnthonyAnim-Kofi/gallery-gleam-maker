@@ -107,7 +107,7 @@ const About = () => {
       <section className="py-12 md:py-16 px-4 bg-background">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {roles.map(role => <div key={role.title} className="bg-burgundy text-cream rounded-2xl p-6 text-center">
+            {roles.map(role => <div key={role.title} className="text-cream rounded-2xl p-6 text-center bg-[#7b1e23]">
                 <div className="flex justify-center mb-4">
                   <role.icon className="w-10 h-10 text-gold" strokeWidth={1.5} />
                 </div>
