@@ -3,33 +3,25 @@ import Footer from "@/components/Footer";
 import aboutHero from "@/assets/about-hero.jpg";
 import aboutStory from "@/assets/about-story.jpg";
 import { Scale, BookOpen, Lightbulb, Users } from "lucide-react";
-
-const roles = [
-  {
-    icon: Scale,
-    title: "Lawyer",
-    description: "Dionne Akom Tweneboah is an attorney-at-law committed to driving diplomatic change and delivering justice with integrity and compassion."
-  },
-  {
-    icon: BookOpen,
-    title: "Author",
-    description: "As an author, Dionne uses her voice to inspire growth, clarity, and purpose in others."
-  },
-  {
-    icon: Lightbulb,
-    title: "Entrepreneur",
-    description: "Dionne is a visionary entrepreneur building impactful solutions shaped by her Kumasi-rooted drive and innovation."
-  },
-  {
-    icon: Users,
-    title: "Coach",
-    description: "As a coach, Dionne empowers, individuals especially women and youth, to unlock confidence, direction, and their full potential."
-  }
-];
-
+const roles = [{
+  icon: Scale,
+  title: "Lawyer",
+  description: "Dionne Akom Tweneboah is an attorney-at-law committed to driving diplomatic change and delivering justice with integrity and compassion."
+}, {
+  icon: BookOpen,
+  title: "Author",
+  description: "As an author, Dionne uses her voice to inspire growth, clarity, and purpose in others."
+}, {
+  icon: Lightbulb,
+  title: "Entrepreneur",
+  description: "Dionne is a visionary entrepreneur building impactful solutions shaped by her Kumasi-rooted drive and innovation."
+}, {
+  icon: Users,
+  title: "Coach",
+  description: "As a coach, Dionne empowers, individuals especially women and youth, to unlock confidence, direction, and their full potential."
+}];
 const About = () => {
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <Navbar />
 
       {/* Hero Section */}
@@ -40,11 +32,7 @@ const About = () => {
           </h1>
 
           <div className="max-w-xs md:max-w-sm mx-auto mb-10">
-            <img
-              src={aboutHero}
-              alt="Dionne Tweneboah"
-              className="w-full rounded-b-[200px] shadow-2xl"
-            />
+            <img src={aboutHero} alt="Dionne Tweneboah" className="w-full rounded-b-[200px] shadow-2xl" />
           </div>
 
           <div className="max-w-2xl mx-auto space-y-4">
@@ -63,15 +51,11 @@ const About = () => {
       </section>
 
       {/* Journey Section - Dark Background */}
-      <section className="bg-dark py-16 md:py-24 px-4">
+      <section className="py-16 md:py-24 px-4 bg-neutral-700">
         <div className="container mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
             <div className="flex justify-center lg:justify-start">
-              <img
-                src={aboutStory}
-                alt="Dionne's Journey"
-                className="w-full max-w-sm rounded-lg shadow-xl"
-              />
+              <img src={aboutStory} alt="Dionne's Journey" className="w-full max-w-sm rounded-lg shadow-xl" />
             </div>
 
             <div className="space-y-6 text-cream">
@@ -111,14 +95,10 @@ const About = () => {
       <section className="py-8 px-4 bg-background border-b-2 border-gold">
         <div className="container mx-auto">
           <div className="flex justify-center items-center gap-4 md:gap-8 flex-wrap">
-            {["Lawyer", "Author", "Entrepreneur", "Coach"].map((role, index) => (
-              <div key={role} className="flex items-center gap-4 md:gap-8">
+            {["Lawyer", "Author", "Entrepreneur", "Coach"].map((role, index) => <div key={role} className="flex items-center gap-4 md:gap-8">
                 <span className="font-heading text-2xl md:text-4xl font-semibold">{role}</span>
-                {index < 3 && (
-                  <div className="h-8 md:h-12 w-[2px] bg-gold"></div>
-                )}
-              </div>
-            ))}
+                {index < 3 && <div className="h-8 md:h-12 w-[2px] bg-gold"></div>}
+              </div>)}
           </div>
         </div>
       </section>
@@ -127,11 +107,7 @@ const About = () => {
       <section className="py-12 md:py-16 px-4 bg-background">
         <div className="container mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {roles.map((role) => (
-              <div 
-                key={role.title}
-                className="bg-burgundy text-cream rounded-2xl p-6 text-center"
-              >
+            {roles.map(role => <div key={role.title} className="bg-burgundy text-cream rounded-2xl p-6 text-center">
                 <div className="flex justify-center mb-4">
                   <role.icon className="w-10 h-10 text-gold" strokeWidth={1.5} />
                 </div>
@@ -141,15 +117,12 @@ const About = () => {
                 <p className="text-sm leading-relaxed text-cream/90">
                   {role.description}
                 </p>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
 
       <Footer />
-    </div>
-  );
+    </div>;
 };
-
 export default About;
