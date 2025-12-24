@@ -122,7 +122,7 @@ const Index = () => {
       </section>
 
       {/* White gap between Hero and Mission */}
-      <div className="h-16 md:h-24 bg-background my-0 mx-0 px-0 py-0"></div>
+      <div className="h-16 md:h-24 my-0 mx-0 px-0 py-0 bg-muted"></div>
 
       {/* Mission Section */}
       <section className="text-primary-foreground section-padding bg-[#992430]">
