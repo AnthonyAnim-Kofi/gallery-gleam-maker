@@ -69,7 +69,7 @@ const Index = () => {
 
             {/* Center - Hero Image */}
             <div className="relative z-30">
-              <img src={dionneHero} alt="Dionne Tweneboah" className="w-72 md:w-96 lg:w-[28rem] object-cover" />
+              <img alt="Dionne Tweneboah" className="w-72 md:w-96 lg:w-[28rem] object-cover" src="/lovable-uploads/ae4cd500-bdff-4bd7-8a49-231e17955123.png" />
             </div>
 
             {/* Right buttons */}
