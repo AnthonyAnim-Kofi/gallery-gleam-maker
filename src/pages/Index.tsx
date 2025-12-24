@@ -106,8 +106,8 @@ const Index = () => {
         </div>
 
         {/* Name Banner - overlaps the hero image */}
-        <div className="bg-primary text-primary-foreground py-8 md:py-10 relative overflow-hidden -mt-24 md:-mt-32">
-          <div className="text-center relative z-10 pt-12 md:pt-16 pb-4 px-0 py-[6px]">
+        <div className="bg-primary text-primary-foreground py-8 relative overflow-hidden -mt-24 md:-mt-32 md:py-0">
+          <div className="text-center relative z-10 pt-12 md:pt-16 pb-4 px-0">
             <p className="text-sm md:text-lg tracking-wide mb-2 opacity-90">Hi, I'm</p>
             <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold">
               Dionne<br />Tweneboah
