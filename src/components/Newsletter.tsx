@@ -1,17 +1,11 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import newsletterImage from "@/assets/newsletter-image.jpg";
-
 const Newsletter = () => {
-  return (
-    <section className="bg-background">
+  return <section className="bg-background">
       {/* Top - Image Section */}
       <div className="relative h-[400px] md:h-[500px]">
-        <img
-          src={newsletterImage}
-          alt="Dionne Tweneboah"
-          className="absolute inset-0 w-full h-full object-cover object-top"
-        />
+        <img alt="Dionne Tweneboah" src="/lovable-uploads/1041418e-bd43-48c8-b96c-a08b0bcdb5fb.jpg" className="absolute inset-0 w-full h-full object-cover object-top opacity-85 border-muted" />
         {/* Name overlay */}
         <div className="absolute top-8 left-8 md:top-12 md:left-12">
           <p className="font-heading text-xl md:text-2xl text-white">
@@ -34,11 +28,7 @@ const Newsletter = () => {
           </p>
           
           <div className="space-y-6 pt-4">
-            <Input
-              type="email"
-              placeholder="Your email"
-              className="h-14 rounded-lg border-muted-foreground/30 px-6 text-base"
-            />
+            <Input type="email" placeholder="Your email" className="h-14 rounded-lg border-muted-foreground/30 px-6 text-base" />
             
             {/* Decorative divider */}
             <div className="flex items-center gap-4">
@@ -57,8 +47,6 @@ const Newsletter = () => {
           </p>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Newsletter;
