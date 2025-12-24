@@ -152,7 +152,7 @@ const Index = () => {
         <div className="container mx-auto">
           {/* Top Title */}
           <div className="text-center mb-12">
-            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-gold italic mb-6">
+            <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-bold italic mb-6 text-[#b74d01]">
               You Were Never Meant for an<br />Ordinary Life.
             </h2>
             <p className="max-w-2xl mx-auto text-muted-foreground">
