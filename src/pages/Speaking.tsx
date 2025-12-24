@@ -93,25 +93,29 @@ const Speaking = () => {
             </div>
 
             <div className="space-y-6">
-              <p className="text-xl md:text-2xl leading-relaxed italic text-foreground">
-                With a powerful mix of personal story, soul-shaking insight, and
-                practical tools, Dionne challenges audiences to get unstuck, rise with
-                purpose, and redefine success on{" "}
-                <span className="bg-gold/40 px-1 not-italic font-medium">their own terms.</span>
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Whether she's standing before thousands or
-                pouring into an intimate room, Dionne leaves no
-                heart untouched. <span className="font-semibold text-foreground">Her message?</span>
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
+            <p className="text-xl md:text-2xl leading-relaxed font-bold text-foreground">
+              With a powerful mix of personal story, soul-shaking insight, and
+              practical tools, Dionne challenges audiences to get unstuck, rise with
+              purpose, and redefine success on{" "}
+              <span className="brush-highlight text-black ml-1">their own terms.</span>
+            </p>
+
+            {/* Secondary Paragraph */}
+            <p className="text-muted-foreground text-lg leading-relaxed">
+              Whether she's standing before thousands or
+              pouring into an intimate room, Dionne leaves no
+              heart untouched. <span className="font-semibold text-foreground">Her message?</span>
+            </p>
+              <p className="text-muted-foreground text-lg leading-relaxed">
                 You don't have to settle. You don't have to
                 shrink. You were born for more, and it's time to
                 become her.
               </p>
-              <Button variant="hero" className="rounded-full px-8">
-                Book Now
-              </Button>
+              <div className="pt-4">
+                <Button className="bg-primary hover:bg-[#7a1d26] text-white rounded-full px-10 py-6 h-auto text-lg">
+                  Book Now
+                </Button>
+              </div>
             </div>
           </div>
         </div>
