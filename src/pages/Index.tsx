@@ -107,7 +107,7 @@ const Index = () => {
 
         {/* Name Banner - overlaps the hero image */}
         <div className="bg-primary text-primary-foreground py-8 md:py-10 relative overflow-hidden -mt-24 md:-mt-32">
-          <div className="text-center relative z-10 pt-12 md:pt-16 pb-4 px-0">
+          <div className="text-center relative z-10 pt-12 md:pt-16 pb-4 px-0 py-[6px]">
             <p className="text-sm md:text-lg tracking-wide mb-2 opacity-90">Hi, I'm</p>
             <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold">
               Dionne<br />Tweneboah
@@ -256,8 +256,7 @@ const Index = () => {
         {/* Mobile/Tablet: Show title with each image */}
         <div className="block lg:hidden">
           <div className="grid grid-cols-2 sm:grid-cols-3 w-full">
-            {lifeRoles.map((role, index) => (
-              <div key={index} className="relative group">
+            {lifeRoles.map((role, index) => <div key={index} className="relative group">
                 {/* Title bar for each image */}
                 <div className="py-2 bg-[#9e846b] text-center">
                   <p className="font-heading text-sm sm:text-base text-white font-medium">
@@ -268,8 +267,7 @@ const Index = () => {
                 <div className="aspect-[3/4] overflow-hidden">
                   <img src={role.image} alt={role.title} className="w-full h-full object-cover object-top transition-all duration-500 group-hover:scale-105 grayscale group-hover:grayscale-0" />
                 </div>
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
 
@@ -278,23 +276,19 @@ const Index = () => {
           {/* Title Bar */}
           <div className="py-4 bg-[#9e846b]">
             <div className="grid grid-cols-6 max-w-full">
-              {lifeRoles.map((role, index) => (
-                <div key={index} className="text-center">
+              {lifeRoles.map((role, index) => <div key={index} className="text-center">
                   <p className="font-heading text-xl lg:text-2xl text-white font-medium">
                     {role.title}
                   </p>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
 
           {/* Images Strip */}
           <div className="grid grid-cols-6 w-full">
-            {lifeRoles.map((role, index) => (
-              <div key={index} className="relative group aspect-[3/4] overflow-hidden">
+            {lifeRoles.map((role, index) => <div key={index} className="relative group aspect-[3/4] overflow-hidden">
                 <img src={role.image} alt={role.title} className="w-full h-full object-cover object-top transition-all duration-500 group-hover:scale-105 grayscale group-hover:grayscale-0" />
-              </div>
-            ))}
+              </div>)}
           </div>
         </div>
       </section>
