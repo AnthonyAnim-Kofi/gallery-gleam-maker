@@ -31,7 +31,7 @@ const About = () => {
             Hi, I'm Dionne
           </h1>
 
-          <div className="max-w-xs md:max-w-sm mx-auto mb-10">
+          <div className="max-w-xs md:max-w-sm mx-auto ">
             <img src={aboutHero} alt="Dionne Tweneboah" className="w-full rounded-b-[200px] shadow-2xl" />
           </div>
 
